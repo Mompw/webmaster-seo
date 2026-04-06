@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Wedson Momperousse - Webmaster SEO</title>
+    <style>
+        @media print {
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            body { margin: 0; padding: 0; background: white; }
+            .page { box-shadow: none; margin: 0; }
+            .btn-export { display: none !important; }
+            .main-content { max-height: none; overflow: visible; }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 30px 20px 60px;
+        }
+
+        .page {
+            width: 210mm;
+            background: white;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+            overflow: visible;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0660dd 0%, #01bb51 100%);
+            padding: 35px 40px;
+            color: white;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .profile-photo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-text { flex: 1; }
+
+        .name {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 17px;
+            font-weight: 400;
+            opacity: 0.92;
+            margin-bottom: 14px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 268px 1fr;
+            align-items: start;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 28px 22px;
+            border-right: 1px solid #e8e8e8;
+        }
+
+        .main-content {
+            padding: 28px 36px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #0660dd33 transparent;
+        }
+
+        .section { margin-bottom: 22px; }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0660dd;
+            margin-bottom: 14px;
+            padding-bottom: 7px;
+            border-bottom: 3px solid #fed122;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .skill-category { margin-bottom: 18px; }
+
+        .skill-cat-title {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 7px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .skill-cat-title::before {
+            content: '';
+            width: 3px;
+            height: 14px;
+            background: linear-gradient(180deg, #fe5d42, #fed122);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .skills-list { font-size: 9.5px; line-height: 1.65; color: #555; }
+
+        .skill-item {
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 3px;
+        }
+
+        .skill-item::before {
+            content: '•';
+            position: absolute;
+            left: 4px;
+            color: #01bb51;
+            font-weight: bold;
+        }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 8px;
+        }
+
+        .tool-tag {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 3px 9px;
+            border-radius: 10px;
+            font-size: 8.5px;
+            color: #555;
+        }
+
+        .languages-list { font-size: 9.5px; }
+
+        .lang-item {
+            margin-bottom: 7px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lang-name { font-weight: 600; color: #333; }
+
+        .lang-level {
+            font-size: 8.5px;
+            color: #666;
+            background: white;
+            padding: 2px 7px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .objectif {
+            background: linear-gradient(135deg, #e8f4ff 0%, #e8fff4 60%, #fffbe6 100%);
+            padding: 16px 18px;
+            border-radius: 8px;
+            border-left: 4px solid #0660dd;
+            margin-bottom: 22px;
+            font-size: 10.5px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .exp-item {
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #ebebeb;
+        }
+
+        .exp-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 3px;
+        }
+
+        .exp-company {
+            font-size: 10.5px;
+            color: #0660dd;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .exp-date {
+            font-size: 9px;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .exp-missions { font-size: 9.5px; line-height: 1.6; color: #555; }
+        .exp-missions ul { margin-left: 16px; }
+        .exp-missions li { margin-bottom: 3px; }
+
+        .formation-item {
+            margin-bottom: 12px;
+            padding-left: 13px;
+            border-left: 2px solid #fed122;
+        }
+
+        .formation-title { font-weight: 700; color: #222; font-size: 10.5px; }
+        .formation-school { color: #0660dd; font-size: 9.5px; }
+        .formation-date { color: #999; font-size: 8.5px; }
+
+        .btn-export {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #0660dd 0%, #01bb51 100%);
+            color: white;
+            border: none;
+            padding: 11px 22px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+            box-shadow: 0 4px 14px rgba(6, 96, 221, 0.35);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+<button class="btn-export" onclick="window.print()">📄 Télécharger PDF</button>
+
+<div class="page">
+    <div class="header">
+        <div class="header-content">
+            <div class="profile-photo">
+                <img src="Image/new-photo-profile.png" alt="Wedson Momperousse"
+                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%230660dd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22white%22 font-size=%2238%22 font-family=%22Arial%22 font-weight=%22bold%22%3EWM%3C/text%3E%3C/svg%3E'">
+            </div>
+            <div class="header-text">
+                <div class="name">Wedson Momperousse</div>
+                <div class="title">Webmaster SEO</div>
+                <div class="contact-info">
+                    <div class="contact-item">📧 momperousse.wedson@gmail.com</div>
+                    <div class="contact-item">📱 06 21 72 29 88</div>
+                    <div class="contact-item">📍 Saint-Maur-des-Fossés (94)</div>
+                    <div class="contact-item">🚗 Véhiculé</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-grid">
+        <div class="sidebar">
+            <div class="section">
+                <div class="section-title">Expertises Web</div>
+                <div class="skill-category">
+                    <div class="skill-cat-title">Gestion & Maintenance</div>
+                    <div class="skills-list">
+                        <div class="skill-item">Optimisation continue supports web</div>
+                        <div class="skill-item">Pilotage évolutions techniques</div>
+                        <div class="skill-item">Gestion hébergement & domaines</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-title">SEO Technique & Sémantique</div>
+                    <div class="skills-list">
+                        <div class="skill-item">Audit technique (Crawl, Indexation)</div>
+                        <div class="skill-item">Maillage interne & Netlinking</div>
+                        <div class="skill-item">Core Web Vitals & UX/CRO</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-title">Technique & CMS</div>
+                    <div class="tools-grid">
+                        <span class="tool-tag">WordPress</span>
+                        <span class="tool-tag">Shopify</span>
+                        <span class="tool-tag">Webflow</span>
+                        <span class="tool-tag">HTML/CSS</span>
+                        <span class="tool-tag">JavaScript</span>
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">JSON</span>
+                        <span class="tool-tag">Git/GitHub</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-title">Outils & Data</div>
+                    <div class="tools-grid">
+                        <span class="tool-tag">GSC</span>
+                        <span class="tool-tag">GA4</span>
+                        <span class="tool-tag">Looker Studio</span>
+                        <span class="tool-tag">Semrush</span>
+                        <span class="tool-tag">Screaming Frog</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-title">IA & Automation</div>
+                    <div class="tools-grid">
+                        <span class="tool-tag">Make</span>
+                        <span class="tool-tag">N8N</span>
+                        <span class="tool-tag">Zapier</span>
+                        <span class="tool-tag">ChatGPT</span>
+                        <span class="tool-tag">Claude AI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Langues</div>      
+                <div class="languages-list">
+                    <div class="lang-item"><span class="lang-name">Français</span><span class="lang-level">Maternel</span></div>
+                    <div class="lang-item"><span class="lang-name">Anglais</span><span class="lang-level">Bilingue</span></div>
+                    <div class="lang-item"><span class="lang-name">Créole Haïtien</span><span class="lang-level">Maternel</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="objectif">
+                Webmaster orienté performance et UX, je maintiens et fais évoluer vos supports digitaux pour maximiser l'acquisition organique. Expert en SEO technique et CMS, je pilote les projets en coordination avec les équipes Marketing et techniques pour transformer la visibilité en résultats concrets.
+            </div>
+
+            <div class="section">
+                <div class="section-title">Expériences Professionnelles</div>
+
+                <div class="exp-item">
+                    <div class="exp-title">Webmaster SEO/SEA (Bénévole)</div>
+                    <div class="exp-company">ADESS – Association</div>
+                    <div class="exp-date">Mai 2025 – Présent</div>
+                    <div class="exp-missions">
+                        <ul>
+                            <li>Maintenance et optimisation du site : pilotage de la migration adess.fr → adess.org avec préservation intégrale du capital SEO (redirections 301, canonicals, suivi GSC).</li>
+                            <li>Audit technique et refonte on-page : diagnostic des anomalies (contenus dupliqués, structure Hn, architecture sémantique), correction et mise à jour des balises et du maillage interne.</li>
+                            <li>Performance & analytics : mise en place de tableaux de bord SEO/SEA personnalisés, suivi des KPIs et recommandations d'optimisation continue.</li>
+                            <li>Support & coordination : formation des contributeurs internes aux bonnes pratiques de gestion de contenu.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-title">Chef de Projet SEO</div>
+                    <div class="exp-company">Agriconomie.com – E-commerce</div>
+                    <div class="exp-date">Mars 2023 – Septembre 2024</div>
+                    <div class="exp-missions">
+                        <ul>
+                            
+                        <li><strong>Maintenance & évolutions web :</strong> Gestion technique quotidienne du site e-commerce (redirections, codes 404, meta tags, indexation/crawl) et planification des évolutions en lien avec les besoins métiers.</li>
+                        <li><strong>SEO technique & sémantique :</strong> Refonte complète de l'architecture des catégories e-commerce, optimisation du maillage interne, stratégie éditoriale multilingue axée sur l'acquisition et la conversion.</li>
+                        <li><strong>Pilotage de la performance :</strong> Suivi des indicateurs clés via Google Search Console, Analytics et Looker Studio — plans d'optimisation et reporting régulier.</li>
+                        <li><strong>Coordination transverse :</strong> Interface entre les équipes Marketing, graphique et les prestataires techniques ; pilotage d'une équipe de rédacteurs et rédaction de briefs orientés intentions de recherche.</li>
+                        <li><strong>UX & conversion :</strong> Contribution à l'optimisation des parcours utilisateurs sur le site pour améliorer la crawlabilité et le taux de conversion.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="results-box">
+                        <div class="results-title">🎯KPIs</div>
+                        <ul>
+                            <li>+5000% organic clicks on the blog</li>
+                            <li>Average position: Top 10 on strategic keywords</li>
+                            <li>Average CTR: 1.7%</li>
+                            <li>+47.38% keywords ranked</li>
+                        </ul>
+                </div>
+               
+
+                <div class="exp-item">
+                    <div class="exp-title">Chargé de Relations Clients B2B Bilingue</div>
+                    <div class="exp-company">Indigo Publications</div>
+                    <div class="exp-date">2017 – 2021</div>
+                    <div class="exp-missions">
+                        <ul>
+                            <li>Gestion de grands comptes et reporting statistique des renouvellements.</li>
+                            <li>Support client multicanal bilingue (français-anglais) via téléphone, mail et chat.</li> 
+                            <li>Présentation et compte rendu des données statistiques des renouvellements.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-title">Coordinateur Service Franchise</div>
+                    <div class="exp-company">Subway France</div>
+                    <div class="exp-date">2013 – 2017</div>
+                    <div class="exp-missions">
+                        <ul>
+                            <li><strong>SEO Local & e-réputation :</strong> Pilotage des fiches Google My Business et gestion des avis et commentaires clients.</li>
+                            <li><strong>Coordination transverse :</strong> Interface entre les départements internes et les partenaires externes (France, Italie, Israël) pour la cohérence des informations.</li>
+                            <li><strong>Support & formation :</strong> Animation de sessions de formation en ligne (visioconférence), gestion du back office des cours numériques.</li>
+                            <li><strong>Mise à jour et maintenance :</strong> Des bases de données franchisés.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Formation</div>
+                <div class="formation-item">
+                    <div class="formation-title">Chef de Projet Multimédia option SEO (Niveau 7)</div>
+                    <div class="formation-school">The Bridge École Entreprise (2024)</div>
+                </div>
+                <div class="formation-item">
+                    <div class="formation-title">Webmarketing & Communication Digitale</div>
+                    <div class="formation-school">Visiplus Academy (2022)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function syncHeight() {
+        const sidebar = document.querySelector('.sidebar');
+        const main = document.querySelector('.main-content');
+        if (!sidebar || !main) return;
+        main.style.maxHeight = sidebar.getBoundingClientRect().height + 'px';
+    }
+    window.addEventListener('load', syncHeight);
+    window.addEventListener('resize', syncHeight);
+</script>
+
+</body>
+</html>
