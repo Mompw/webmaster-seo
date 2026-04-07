@@ -8,9 +8,9 @@
         @media print {
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
             body { margin: 0; padding: 0; background: white; }
-            .page { box-shadow: none; margin: 0; }
+            .page { box-shadow: none; margin: 0; width: 100%; }
             .btn-export { display: none !important; }
-            .main-content { max-height: none; overflow: visible; }
+            .main-content { max-height: none !important; overflow: visible !important; }
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,7 +26,7 @@
             background: white;
             margin: 0 auto;
             box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-            overflow: visible;
+            overflow: hidden;
         }
 
         .header {
@@ -101,9 +101,7 @@
 
         .main-content {
             padding: 28px 36px;
-            overflow-y: auto;
-            scrollbar-width: thin;
-            scrollbar-color: #0660dd33 transparent;
+            overflow-y: auto; 
         }
 
         .section { margin-bottom: 22px; }
@@ -203,10 +201,16 @@
             color: #333;
         }
 
+        /* AJOUT DE LA LIGNE DE SÉPARATION */
         .exp-item {
             margin-bottom: 18px;
             padding-bottom: 18px;
-            border-bottom: 1px solid #ebebeb;
+            border-bottom: 1px solid #eee; /* Ligne fine gris clair */
+        }
+
+        .exp-item:last-child {
+            border-bottom: none; /* Pas de ligne pour la dernière expérience */
+            margin-bottom: 10px;
         }
 
         .exp-title {
@@ -234,25 +238,44 @@
         .exp-missions ul { margin-left: 16px; }
         .exp-missions li { margin-bottom: 3px; }
 
-         /* ── RÉSULTATS ── */
         .results-box {
             background: linear-gradient(135deg, #fffbe6 0%, #e8fff4 100%);
-            padding: 10px 13px;
+            padding: 12px;
             border-radius: 6px;
-            margin-top: 10px;
+            margin: 10px 0 20px 0;
             border-left: 4px solid #01bb51;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .results-title {
-            font-size: 9.5px;
+            font-size: 10px;
             font-weight: 700;
             color: #333;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
         }
 
         .results-title::before { content: '📈 '; }
 
-        .results-box ul { font-size: 9px; margin-left: 16px; line-height: 1.7; }
+        .results-box ul { 
+            font-size: 9.5px; 
+            margin-left: 18px; 
+            line-height: 1.6; 
+            list-style-type: none;
+        }
+
+        .results-box li {
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .results-box li::before {
+            content: '✓';
+            position: absolute;
+            left: -15px;
+            color: #01bb51;
+            font-weight: bold;
+        }
 
         .results-box strong { color: #01bb51; }
 
@@ -386,10 +409,9 @@
                     <div class="exp-date">Mai 2025 – Présent</div>
                     <div class="exp-missions">
                         <ul>
-                            <li>Maintenance et optimisation du site : pilotage de la migration adess.fr → adess.org avec préservation intégrale du capital SEO (redirections 301, canonicals, suivi GSC).</li>
-                            <li>Audit technique et refonte on-page : diagnostic des anomalies (contenus dupliqués, structure Hn, architecture sémantique), correction et mise à jour des balises et du maillage interne.</li>
-                            <li>Performance & analytics : mise en place de tableaux de bord SEO/SEA personnalisés, suivi des KPIs et recommandations d'optimisation continue.</li>
-                            <li>Support & coordination : formation des contributeurs internes aux bonnes pratiques de gestion de contenu.</li>
+                            <li>Maintenance et optimisation du site : pilotage de la migration adess.fr → adess.org avec préservation intégrale du capital SEO.</li>
+                            <li>Audit technique et refonte on-page : diagnostic des anomalies, correction des balises et du maillage interne.</li>
+                            <li>Performance & analytics : mise en place de tableaux de bord SEO/SEA personnalisés.</li>
                         </ul>
                     </div>
                 </div>
@@ -400,17 +422,13 @@
                     <div class="exp-date">Mars 2023 – Septembre 2024</div>
                     <div class="exp-missions">
                         <ul>
-                            
-                        <li><strong>Maintenance & évolutions web :</strong> Gestion technique quotidienne du site e-commerce (redirections, codes 404, meta tags, indexation/crawl) et planification des évolutions en lien avec les besoins métiers.</li>
-                        <li><strong>SEO technique & sémantique :</strong> Refonte complète de l'architecture des catégories e-commerce, optimisation du maillage interne, stratégie éditoriale multilingue axée sur l'acquisition et la conversion.</li>
-                        <li><strong>Pilotage de la performance :</strong> Suivi des indicateurs clés via Google Search Console, Analytics et Looker Studio — plans d'optimisation et reporting régulier.</li>
-                        <li><strong>Coordination transverse :</strong> Interface entre les équipes Marketing, graphique et les prestataires techniques ; pilotage d'une équipe de rédacteurs et rédaction de briefs orientés intentions de recherche.</li>
-                        <li><strong>UX & conversion :</strong> Contribution à l'optimisation des parcours utilisateurs sur le site pour améliorer la crawlabilité et le taux de conversion.</li>
+                            <li><strong>Maintenance & évolutions :</strong> Gestion technique quotidienne (redirections, codes 404, indexation/crawl).</li>
+                            <li><strong>SEO & Sémantique :</strong> Refonte de l'architecture des catégories, optimisation du maillage interne.</li>
+                            <li><strong>Pilotage performance :</strong> Suivi via GSC, Analytics et Looker Studio.</li>
                         </ul>
                     </div>
-                </div>
-
-               <div class="results-box">
+                    
+                    <div class="results-box">
                         <div class="results-title">Résultats mesurables</div>
                         <ul>
                             <li><strong>+5 000 % de clics organiques</strong> sur le blog</li>
@@ -419,7 +437,7 @@
                             <li><strong>+47,38 % de mots-clés</strong> positionnés</li>
                         </ul>
                     </div>
-               
+                </div>
 
                 <div class="exp-item">
                     <div class="exp-title">Chargé de Relations Clients B2B Bilingue</div>
@@ -428,8 +446,11 @@
                     <div class="exp-missions">
                         <ul>
                             <li>Gestion de grands comptes et reporting statistique des renouvellements.</li>
-                            <li>Support client multicanal bilingue (français-anglais) via téléphone, mail et chat.</li> 
-                            <li>Présentation et compte rendu des données statistiques des renouvellements.</li>
+                            <li>Support client multicanal bilingue (français-anglais).</li>
+                            <li>Renégociation des contrats de réabonnement</li>
+                            <li>Administration des impayés et relances clients</li>
+                            <li>Gestion des dépôts bancaires</li>
+                            <li>Présentation et compte rendu des données statistiques des renouvellements</li>
                         </ul>
                     </div>
                 </div>
@@ -440,10 +461,13 @@
                     <div class="exp-date">2013 – 2017</div>
                     <div class="exp-missions">
                         <ul>
-                            <li><strong>SEO Local & e-réputation :</strong> Pilotage des fiches Google My Business et gestion des avis et commentaires clients.</li>
-                            <li><strong>Coordination transverse :</strong> Interface entre les départements internes et les partenaires externes (France, Italie, Israël) pour la cohérence des informations.</li>
-                            <li><strong>Support & formation :</strong> Animation de sessions de formation en ligne (visioconférence), gestion du back office des cours numériques.</li>
-                            <li><strong>Mise à jour et maintenance :</strong> Des bases de données franchisés.</li>
+                            <li><strong>SEO Local :</strong> Pilotage des fiches Google My Business et gestion de l'e-réputation.</li>
+                            <li><strong>Coordination :</strong> Interface entre départements et partenaires internationaux.</li>
+                            <li>Présentation par audio/vidéo conférence Administratif des formations Subway</li>
+                            <li>Traduction de documents</li>
+                            <li>Négociation et mise en place de partenariats pour le centre de formation</li>
+                            <li>Back office des cours en ligne</li>
+                            <li>Participation à la mise en place d’ateliers de formation</li>
                         </ul>
                     </div>
                 </div>
@@ -459,6 +483,15 @@
                     <div class="formation-title">Webmarketing & Communication Digitale</div>
                     <div class="formation-school">Visiplus Academy (2022)</div>
                 </div>
+
+                <div class="formation-item">
+                    <div class="formation-title">Master 1 Responsable Marketing et Commercial</div>
+                    <div class="formation-school">CNAM-ICSV (2009-2010)</div>
+                </div>
+                    <div class="formation-item">
+                    <div class="formation-title">Licence Pro Commerce International</div>
+                    <div class="formation-school">Université de Cergy Pontoise (2007-2008)</div>
+                </div>
             </div>
         </div>
     </div>
@@ -469,10 +502,14 @@
         const sidebar = document.querySelector('.sidebar');
         const main = document.querySelector('.main-content');
         if (!sidebar || !main) return;
-        main.style.maxHeight = sidebar.getBoundingClientRect().height + 'px';
+        
+        const sidebarHeight = sidebar.getBoundingClientRect().height;
+        main.style.maxHeight = sidebarHeight + 'px';
     }
+    
     window.addEventListener('load', syncHeight);
     window.addEventListener('resize', syncHeight);
+    document.fonts.ready.then(syncHeight);
 </script>
 
 </body>
